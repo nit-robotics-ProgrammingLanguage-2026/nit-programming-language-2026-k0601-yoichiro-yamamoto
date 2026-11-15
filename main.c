@@ -2,8 +2,21 @@
 
 int main(void)
 {
-    int n;
-    scanf("%d", &n);
-    /* TODO: n が負なら NG、そうでなければ 1+2+...+n を for 文で計算して表示 */
+    long n;
+    long sum = 0;
+    long loop;
+
+    scanf("%ld", &n);
+
+    if (n < 0) {
+        printf("NG");
+        return 0;
+    }
+
+    for (loop = 1; loop <= n; loop++) {
+        sum += loop;
+    }
+
+    printf("%ld", sum);
     return 0;
 }
